@@ -1,17 +1,32 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const WINS = {
+    rock: 'scissor',
+    scissor: 'paper',
+    paper: 'rock',
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function getResult(left, right) {
+    if (WINS[left] === right) return '승리';
+    else if (left === WINS[right]) return '패배';
+    return '무승부';
+}
+
+function handleClick() {
+    console.log('가위바위보!');
+}
+
+const me = 'rock';
+const other = 'scissor';
+
+root.render(<App/>,
+//   <>
+// <h1 id="title">가위바위보</h1>
+// <h2>{getResult(me, other)}</h2>
+// <button className="hand" onClick={handleClick}>가위</button>
+// <button className="hand" onClick={handleClick}>바위</button>
+// <button className="hand" onClick={handleClick}>보</button>
+//   </>
+);
