@@ -1,5 +1,5 @@
-function Button({text}) {
-    return <button>{text}</button>;
+function Button({children, onClick}) {
+    return <button onClick={onClick}>{children}</button>;
 }
 
 export default Button;
