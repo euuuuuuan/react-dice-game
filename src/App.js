@@ -1,6 +1,8 @@
 import {useState} from "react"; /* 컴퍼넌트에서 스테이트를 사용하려면 useState 함수를 불러온다. */
 import Board from "./Board";
 import Button from "./Button";
+import './App.css';
+import button from "./Button";
 
 function random(n) {
     return Math.ceil(Math.random() * n);
@@ -36,10 +38,10 @@ function App() {
     /* 자식 컴포넌트 state를 부모 컴포넌트로 올려 주는 것을 state lifting이라 한다.*/
 
     return (
-        <div>
+        <div className="App">
             <div>
-                <Button color="blue" onClick={handleRollClick}>던지기</Button>
-                <Button color="red" onClick={handleClearClick}>처음부터</Button>
+                <Button className="App-button" color="blue" onClick={handleRollClick}>던지기</Button>
+                <Button className="App-button" color="red" onClick={handleClearClick}>처음부터</Button>
             </div>
             <div>
                 <Board name="나" color="blue" gameHistory={myHistory}/>
